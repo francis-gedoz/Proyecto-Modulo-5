@@ -1,7 +1,14 @@
 import React from "react";
+import StationItem from "./StationItem";
 
-function StationList() {
-    return <div>Lista de estaciones</div>;
+function StationList({ stations }) {
+    return (
+        <div>
+        {stations.map((station) => (
+            <StationItem key={station.id} station={station} />
+        ))}
+        </div>
+    );
 }
 
 export default StationList;
