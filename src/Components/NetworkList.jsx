@@ -1,18 +1,20 @@
 import React from "react";
+import { Card, CardContent, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function NetworkList({ networks }) {
     return (
         <div>
         {networks.map((net) => (
-            <div key={net.id} style={{ marginBottom: "10px" }}>
-            <h4>{net.name}</h4>
-            <p>{net.location.city}, {net.location.country}</p>
-
-            <Link to={`/stations/${net.id}`}>
-                Ver estaciones
-            </Link>
-            </div>
+            <Card key={net.id} sx={{ mb: 2, p: 1 }}>
+            <CardContent>
+                <Typography variant="h6">{net.name}</Typography>
+                <Typography>{net.location.city}, {net.location.country}</Typography>
+                <Button component={Link} to={`/stations/${net.id}`} variant="contained" sx={{ mt: 1 }}>
+                VER ESTACIONES
+                </Button>
+            </CardContent>
+            </Card>
         ))}
         </div>
     );

@@ -1,12 +1,22 @@
 import React from "react";
+import { Card, CardContent, Typography, Button } from "@mui/material";
 
 function StationItem({ station }) {
     return (
-        <div style={{ marginBottom: "10px" }}>
-        <h4>{station.name}</h4>
-        <p>Bicis libres: {station.free_bikes}</p>
-        <p>Espacios libres: {station.empty_slots}</p>
-        </div>
+        <Card sx={{ mb: 2, p: 1 }}>
+        <CardContent>
+            <Typography variant="h6">{station.name}</Typography>
+            <Typography>Bicicletas disponibles: {station.free_bikes}</Typography>
+            <Typography>Espacios libres: {station.empty_slots}</Typography>
+            <Button
+            variant="contained"
+            sx={{ mt: 1 }}
+            onClick={() => window.open(`https://www.google.com/maps?q=${station.latitude},${station.longitude}`, "_blank")}
+            >
+            VER EN GOOGLE MAPS
+            </Button>
+        </CardContent>
+        </Card>
     );
 }
 
