@@ -1,16 +1,95 @@
-# React + Vite
+# GlobalBikes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada en **React + Vite** que permite explorar
+redes de bicicletas públicas en todo el mundo utilizando la API pública
+**CityBikes**.
 
-Currently, two official plugins are available:
+El usuario puede: - Ver todas las redes de bicicletas disponibles. -
+Seleccionar una red y ver sus estaciones. - Abrir cualquier estación
+directamente en **Google Maps**. - Navegar entre páginas gracias a
+**React Router**. - Visualizar la interfaz con estilos de **Material UI
+(MUI)**. - Contar con un control de errores gracias a **Error
+Boundaries**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+------------------------------------------------------------------------
 
-## React Compiler
+## Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **React 18**
+-   **Vite**
+-   **React Router DOM**
+-   **Material UI (MUI)**
+-   **JavaScript**
+-   **CityBikes API**
+-   **Error Boundaries**
 
-## Expanding the ESLint configuration
+------------------------------------------------------------------------
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Estructura del proyecto
+
+    src/
+    │
+    ├── Components/
+    │   ├── Navbar.jsx
+    │   ├── NetworkList.jsx
+    │   ├── StationList.jsx
+    │   └── StationItem.jsx
+    │
+    ├── Errors/
+    │   └── ErrorBoundary.jsx
+    │
+    ├── Hooks/
+    │   └── UseFetch.jsx
+    │
+    ├── Pages/
+    │   ├── Home.jsx
+    │   ├── NetworksPage.jsx
+    │   └── StationsPage.jsx
+    │
+    ├── Styles/
+    │   └── Global.css
+    │
+    ├── App.css
+    ├── App.jsx
+    ├── index.css
+    └── main.jsx
+
+------------------------------------------------------------------------
+
+## API utilizada
+
+La aplicación consume la API pública de CityBikes:
+
+ **Lista de redes:**
+
+    https://api.citybik.es/v2/networks
+
+ **Estaciones de una red:**
+
+    https://api.citybik.es/v2/networks/:id
+
+------------------------------------------------------------------------
+
+## Manejo de errores
+
+El proyecto cuenta con un componente **ErrorBoundary** para capturar
+fallos de renderizado.
+
+------------------------------------------------------------------------
+
+## Hook personalizado
+
+### `useFetch(url)`
+
+Permite: - manejar carga (`loading`) - manejar errores (`error`) -
+obtener datos desde la API (`data`)
+
+------------------------------------------------------------------------
+
+## Estilos
+
+La aplicación utiliza **Material UI (MUI)** para la interfaz visual.\
+También incluye estilos globales en:\
+`src/Styles/Global.css`
+
+
