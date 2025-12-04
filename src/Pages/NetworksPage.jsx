@@ -6,7 +6,7 @@ import NetworkList from "../Components/NetworkList";
 function NetworksPage() {
     const { data, loading, error } = useFetch("https://api.citybik.es/v2/networks");
 
-    if (loading) return <p>⌛ Cargando redes ⌛</p>;
+    if (loading) return <p>Cargando redes...⌛</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
