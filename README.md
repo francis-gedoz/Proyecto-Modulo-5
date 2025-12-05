@@ -17,13 +17,20 @@ El usuario puede:
 
 ## Tecnologías utilizadas
 
--   **React 18**
+-   **React**
 -   **Vite**
 -   **React Router DOM**
 -   **Material UI (MUI)**
 -   **JavaScript**
--   **CityBikes API**
+-   **CityBikes API (pública)**
 -   **Error Boundaries**
+-   **Netlify**
+
+------------------------------------------------------------------------
+
+## Despliegue en Netlify
+
+    https://globalbikes.netlify.app/
 
 ------------------------------------------------------------------------
 
@@ -31,11 +38,17 @@ El usuario puede:
 
     src/
     │
+    │
+    ├── assets/
+    │   ├── bike.png
+    │   ├── pngwing.png
+    │   └── react.svg
+    │ 
     ├── Components/
     │   ├── Navbar.jsx
     │   ├── NetworkList.jsx
-    │   ├── StationList.jsx
-    │   └── StationItem.jsx
+    │   ├── StationItem.jsx
+    │   └── StationList.jsx
     │
     ├── Errors/
     │   └── ErrorBoundary.jsx
@@ -95,6 +108,7 @@ Permite:
 
 La aplicación utiliza **Material UI (MUI)** para la interfaz visual.\
 También incluye estilos globales en:\
+
 `src/Styles/Global.css`
 
 
